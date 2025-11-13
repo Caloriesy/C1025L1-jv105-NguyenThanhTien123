@@ -1,0 +1,18 @@
+body{
+    font-family: Arial, sans-serif;
+}
+h2{
+    text-align: center;
+    background-color: orangered;
+}
+.lbl{
+    color: blue;
+}
+
+#ip{
+    margin-left: 25px;
+}
+
+.lbl1{
+    color: indianred;
+}
