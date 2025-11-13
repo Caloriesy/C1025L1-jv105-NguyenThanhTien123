@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input  placeholder="Điểm toán" id="toan">
+    <input placeholder="Điểm lý" id="ly">
+    <input placeholder="Điểm hóa" id="hoa">
+    <button onclick="tong()" >Tổng</button>
+    <label id="label">điểm trung bình</label>
+    <script>
+        function tong(){
+            let toan = +document.getElementById("toan").value;
+            let ly = +document.getElementById("ly").value;
+            let hoa = +document.getElementById("hoa").value;
+            let result=(toan+ly+hoa)/3;
+            document.getElementById("label").innerText = "Điểm trung bình: " + result.toFixed(2);
+        }
+    </script>
+</body>
+</html>
