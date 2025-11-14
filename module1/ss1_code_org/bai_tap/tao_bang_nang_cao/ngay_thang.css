@@ -1,0 +1,38 @@
+table{
+    margin: auto;
+}
+
+td, th {
+        width: 100px;
+        height: 75px;
+        border: 1px solid black;
+        text-align: center;
+        vertical-align: middle;
+        font-size: xx-large;
+    }
+
+#cn{
+    background-color: red;
+}
+
+#thead{
+    color: white;
+}
+
+.tcolor{
+    background-color: rgb(250, 217, 99);
+}
+
+#tb{
+    background-color: blue;
+}
+
+.tdt{
+    color: blue;
+}
+
+sub { color :black }
+
+.tdr{
+    color: red;
+}
