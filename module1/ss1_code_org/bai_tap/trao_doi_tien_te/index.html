@@ -8,15 +8,20 @@
 <body>
     <body>
     <input type="text" placeholder="nhập số tiền VND" id="vnd">
-    <button onclick="accept()">accept</button>
+    <button onclick="vnd()">accept</button>
+    <button onclick="usd()">accept</button>
     <label id="lbl">số tiền usd:</label>
-</body>
-<script>
-    function accept(){
-    let vnd= +document.getElementById("vnd").value;
-    let result= vnd/25000;
-    document.getElementById("lbl").textContent = "số tiền usd:" + parseInt(result);
 
+<script>
+    function vnd(){
+    let money= +document.getElementById("vnd").value;
+    let result= money/25000;
+    document.getElementById("lbl").textContent = "số tiền usd:" + parseInt(result);
+    }
+    function usd(){
+    let money= +document.getElementById("vnd").value;
+    let result= money*25000;
+    document.getElementById("lbl").textContent = "số tiền VND:" + parseInt(result);
     }
 </script>
 </body>
