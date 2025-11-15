@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+    <input type="text" placeholder="nhập số tiền VND" id="vnd">
+    <button onclick="accept()">accept</button>
+    <label id="lbl">số tiền usd:</label>
+</body>
+<script>
+    function accept(){
+    let vnd= +document.getElementById("vnd").value;
+    let result= vnd/25000;
+    document.getElementById("lbl").textContent = "số tiền usd:" + parseInt(result);
+
+    }
+</script>
+</body>
+</html>

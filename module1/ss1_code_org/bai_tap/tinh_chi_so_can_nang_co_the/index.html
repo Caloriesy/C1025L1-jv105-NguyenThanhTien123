@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="text" placeholder="cân nặng" id="wight">
+    <input type="text" placeholder="chiều cao" id="height">
+    <button onclick="accept()">accept</button>
+    <label id="lbl">kết quả:</label>
+</body>
+<script>
+    function accept(){
+    let wight = +document.getElementById("wight").value;
+    let height= +document.getElementById("height").value;
+    let result= wight/(height*height);
+    document.getElementById("lbl").textContent = "kết quả:" + parseInt(result);
+
+    }
+</script>
+</html>
