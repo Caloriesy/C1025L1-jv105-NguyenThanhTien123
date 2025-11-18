@@ -7,21 +7,35 @@
 </head>
 <body>
     <body>
-    <input type="text" placeholder="nhập số tiền VND" id="vnd">
-    <button onclick="vnd()">accept</button>
-    <button onclick="usd()">accept</button>
-    <label id="lbl">số tiền usd:</label>
+    <input type="text" placeholder="nhập số tiền VND" id="money">
+    <button onclick="sendmoney()">accept</button>
+        <select name="" id="item1">
+            <option value="vn">VND</option>
+            <option value="usd">USD</option>
+        </select>
+
+        <select name="" id="item2">
+            <option value="vn">VND</option>
+            <option value="usd">USD</option>
+        </select>
+    <label id="lbl">số tiền:</label>
 
 <script>
-    function vnd(){
-    let money= +document.getElementById("vnd").value;
-    let result= money/25000;
-    document.getElementById("lbl").textContent = "số tiền usd:" + parseInt(result);
+    function sendmoney(){
+    let result=0;
+    let money = document.getElementById("money").value;
+    let item1 = document.getElementById("item1").value;
+    let item2 = document.getElementById("item2").value;
+    if(item1 == "vn" && item2 == "usd"){
+        result= money/25000;
     }
-    function usd(){
-    let money= +document.getElementById("vnd").value;
-    let result= money*25000;
-    document.getElementById("lbl").textContent = "số tiền VND:" + parseInt(result);
+    else if(item1 == "usd" && item2 == "vn"){
+        result=money*25000;
+    }
+    else {
+        result= "số tiền không thể thực thi";
+    }
+    document.getElementById("lbl").innerText = "số tiền:" + result;
     }
 </script>
 </body>
