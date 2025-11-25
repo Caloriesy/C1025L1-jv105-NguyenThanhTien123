@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="weight" type="text" placeholder="nhập cân nặng">
+    <br>
+    <br>
+    <input id="height" type="text" placeholder="nhập chiều cao">
+    <br>
+    <br>
+    <button onclick="bamvao()">ấn vào</button>
+    <br>
+    <label id="ketqua">kết quả:</label>
+</body>
+<script>
+
+
+    function bamvao() {
+        let weight = parseFloat(document.getElementById("weight").value);
+        let height = parseFloat(document.getElementById("height").value);
+        let bmi = weight / (height * height);
+        if (bmi < 18.5) {
+            document.getElementById("ketqua").innerText = "kết quả: thiếu cân";
+        }
+        else if (bmi >= 18.5 && bmi < 25) {
+            document.getElementById("ketqua").innerText = "kết quả: bình thường";
+        }
+        else if (bmi >=25.0 && bmi < 30.0) {
+            document.getElementById("ketqua").innerText = "kết quả: hơi béo";
+        }
+        else if (bmi >= 30.0) {
+            document.getElementById("ketqua").innerText = "kết quả: béo";
+        }
+        else {
+            document.write("thao tác sai vui lòng nhập lại");
+        }
+    }
+
+</script>
+
+</html>

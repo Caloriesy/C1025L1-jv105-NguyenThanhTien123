@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="a" type="text" placeholder="so a">
+    <input id="b" type="text" placeholder="so b">
+    <br>
+    <button onclick="p()">ấn vào</button>
+    <label id="ketqua"></label>
+</body>
+    <script>
+        function p(){
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let tong = a/b;
+            if(a%b==0){
+                document.getElementById("ketqua").innerText = ("a chia hết cho b");
+            }
+            else{
+                document.getElementById("ketqua").innerText = ("a không chia hết cho b");
+            }
+        }
+        
+
+    </script>
+</html>

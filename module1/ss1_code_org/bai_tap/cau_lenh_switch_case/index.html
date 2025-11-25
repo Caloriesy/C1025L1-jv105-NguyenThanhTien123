@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ngay" type="text">
+    <button onclick="p()">tính ngày trong tháng</button>
+    <br>
+    <label for="">kết quả:</label>
+    <label id="ketqua"></label>
+</body>
+<script>
+    function p() {
+    let so_ngay = parseInt(document.getElementById("ngay").value);
+
+    switch (so_ngay) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            document.getElementById("ketqua").innerText = ("Tháng " + so_ngay + " có 31 ngày");
+            break;
+        
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            document.getElementById("ketqua").innerText = ("Tháng " + so_ngay + " có 30 ngày");
+            break;
+
+        case 2:
+            document.getElementById("ketqua").innerText = ("Tháng 2 có 28 ngày. Năm nhuận thì 29 ngày");
+            break;
+
+        default:
+            document.getElementById("ketqua").innerText = ("Không có tháng này");
+    }
+}
+
+</script>
+</html>

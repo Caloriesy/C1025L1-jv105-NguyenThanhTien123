@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="a" type="text" placeholder="nhập số điểm bài kiểm tra">
+    <input id="b" type="text" placeholder="nhập số điểm thi giữa kỳ">
+    <input id="c" type="text" placeholder="nhập số điểm thi cuối kỳ">
+    <br>
+    <button onclick="p()">ấn vào</button>
+    <br>
+    <label id="ketqua"></label>
+</body>
+    <script>
+        function p(){
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+
+            let tong=(a+b+c)/3;
+            if(tong>=0 && tong<=100){
+                if(tong>=90){
+                    document.getElementById("ketqua").innerText = ("học sinh loại xuất sắc");
+                }
+                else if(tong>=70){
+                    document.getElementById("ketqua").innerText = ("học sinh loại giỏi");
+                }
+                else if(tong>=50){
+                    document.getElementById("ketqua").innerText = ("học sinh loại trung bình");
+                }
+                else if(tong<50){
+                    document.getElementById("ketqua").innerText = ("học sinh loại kém");
+                }
+            }
+            else{
+                document.getElementById("ketqua").innerText = ("lỗi ko thể thực hiện tính toán");
+            }
+        }
+        
+
+    </script>
+</html>
