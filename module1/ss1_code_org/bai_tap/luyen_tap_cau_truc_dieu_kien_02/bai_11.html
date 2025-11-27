@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính thuế TNCN</title>
+</head>
+<body>
+
+    <input id="income" type="text" placeholder="thu nhập tháng">
+    <input id="dep" type="text" placeholder="số người phụ thuộc">
+    <button onclick="p()">tính</button>
+    <div id="ketqua"></div>
+
+<script>
+function p() {
+    let income = parseFloat(document.getElementById("income").value);
+    let dep = parseInt(document.getElementById("dep").value);
+
+    if (isNaN(income) || income < 0 || isNaN(dep) || dep < 0) {
+        document.getElementById("ketqua").innerText = "dữ liệu không hợp lệ";
+        return;
+    }
+
+    let giamtru = 11000000 + dep * 4000000;
+    let tnct = income - giamtru;
+
+    if (tnct <= 0) {
+        document.getElementById("ketqua").innerText = "không phải nộp thuế";
+        return;
+    }
+
+    let tax = 0;
+    let t = tnct;
+
+    if (t > 80000000) {
+        tax += (t - 80000000) * 0.35;
+        t = 80000000;
+    }
+    if (t > 52000000) {
+        tax += (t - 52000000) * 0.30;
+        t = 52000000;
+    }
+    if (t > 32000000) {
+        tax += (t - 32000000) * 0.25;
+        t = 32000000;
+    }
+    if (t > 18000000) {
+        tax += (t - 18000000) * 0.20;
+        t = 18000000;
+    }
+    if (t > 10000000) {
+        tax += (t - 10000000) * 0.15;
+        t = 10000000;
+    }
+    if (t > 5000000) {
+        tax += (t - 5000000) * 0.10;
+        t = 5000000;
+    }
+    tax += t * 0.05;
+
+    document.getElementById("ketqua").innerText = "thuế phải nộp " + Math.floor(tax) + " đồng";
+}
+</script>
+
+</body>
+</html>

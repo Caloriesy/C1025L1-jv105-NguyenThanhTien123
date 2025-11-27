@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <input id="kwh" type="text" placeholder="nhập số kWh">
+    <button onclick="p()">tính</button>
+    <label for="">kết quả:</label>
+    <label id="ketqua"></label>
+
+
+</body>
+<script>
+    function p() {
+        let kwh = parseFloat(document.getElementById("kwh").value);
+
+        if (isNaN(kwh) || kwh < 0) {
+            document.getElementById("ketqua").innerText = "nhập số kWh hợp lệ";
+            return;
+        }
+
+        let cost = 0;
+        let n = kwh;
+
+        if (n > 400) {
+            cost += (n - 400) * 3259;
+            n = 400;
+        }
+        if (n > 300) {
+            cost += (n - 300) * 3151;
+            n = 300;
+        }
+        if (n > 200) {
+            cost += (n - 200) * 3051;
+            n = 200;
+        }
+        if (n > 100) {
+            cost += (n - 100) * 2723;
+            n = 100;
+        }
+        if (n > 50) {
+            cost += (n - 50) * 2167;
+            n = 50;
+        }
+        cost += n * 1866;
+
+        document.getElementById("ketqua").innerText = "tiền điện là " + cost + " đồng";
+    }
+</script>
+
+</html>

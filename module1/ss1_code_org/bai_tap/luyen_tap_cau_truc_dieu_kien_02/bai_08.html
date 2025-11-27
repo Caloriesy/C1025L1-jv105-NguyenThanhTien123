@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="a" type="text" placeholder="nhập độ tuổi">
+    <br>
+    <button onclick="p()">kiểm tra</button><br>
+    <label for="">kết quả:</label>
+    <label id="ketqua"></label>
+</body>
+<script>
+    function p() {
+        let a = (document.getElementById("a").value);
+        if (a == null) {
+
+            document.getElementById("ketqua").innerText = ("lỗi không thể thực thi");
+        }
+        else {
+            if (a > 0 && a <= 120) {
+                document.getElementById("ketqua").innerText = ("là tuổi của một người");
+            }
+            else {
+                document.getElementById("ketqua").innerText = ("không phải là tuổi của một người");
+            }
+        }
+    }
+
+
+</script>
+
+</html>
