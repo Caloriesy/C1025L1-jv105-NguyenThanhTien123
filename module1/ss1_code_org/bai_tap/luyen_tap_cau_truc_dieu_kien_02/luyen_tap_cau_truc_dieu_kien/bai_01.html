@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="a" type="text" placeholder="nhập độ c">
+    <br>
+    <button onclick="p()">chuyển đổi</button><br>
+    <label for="">kết quả:</label>
+    <label id="ketqua"></label>
+</body>
+<script>
+    function p() {
+        let a = parseFloat(document.getElementById("a").value);
+        if (a == null) {
+
+            document.getElementById("ketqua").innerText = ("lỗi không thể thực thi");
+        }
+        else {
+            let f = a * 9 / 5 + 32;
+            document.getElementById("ketqua").innerText = (f);
+        }
+    }
+
+
+</script>
+
+</html>

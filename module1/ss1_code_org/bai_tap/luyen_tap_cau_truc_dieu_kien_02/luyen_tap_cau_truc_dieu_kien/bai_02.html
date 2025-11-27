@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="met" type="text" placeholder="nhập số met">
+    <br>
+    <button onclick="p()">chuyển đổi</button><br>
+    <label for="">kết quả:</label>
+    <label id="ketqua"> </label>
+</body>
+<script>
+    function p() {
+        let metter = parseFloat(document.getElementById("met").value);
+        if (metter == null) {
+            document.getElementById("ketqua").innerText = ("lỗi không thể thực thi");
+        }
+        else {
+            let feet = metter * 3.28084;
+            document.getElementById("ketqua").innerText = (feet);
+        }
+    }
+
+
+</script>
+
+</html>

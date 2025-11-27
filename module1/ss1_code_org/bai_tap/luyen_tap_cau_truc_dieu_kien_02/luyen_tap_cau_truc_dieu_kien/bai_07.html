@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="a" type="text" placeholder="số a">
+    <input id="b" type="text" placeholder="số b">
+    <input id="c" type="text" placeholder="số c">
+
+    <br>
+    <button onclick="p()">tính</button><br>
+    <label for="">kết quả:</label>
+    <label id="ketqua"></label>
+</body>
+<script>
+    function p() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        let c = parseFloat(document.getElementById("c").value);
+        let delta = Math.pow(b, 2) - 4 * a * c;
+        if (a == 0) {
+            document.getElementById("ketqua").innerText = ("a không thể bằng 0");
+        }
+        else if (delta == 0) {
+            let nghiem_kep = -b / (2 * a);
+            document.getElementById("ketqua").innerText = ("phương trình có 1 nghiệm kép là:" + nghiem_kep);
+        }
+        else if (delta > 0) {
+            let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            document.getElementById("ketqua").innerText = ("phương trình có 2 nghiệm thực là:" + x1 + "," + x2);
+        }
+        else if (delta < 0) {
+            document.getElementById("ketqua").innerText = ("phương trình vô nghiệm");
+        }
+
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="a" type="text" placeholder="nhập cạnh a">
+    <br>
+    <button onclick="p()">tính</button><br>
+    <label for="">kết quả:</label>
+    <label id="ketqua"></label>
+</body>
+<script>
+    function p() {
+        let a = parseFloat(document.getElementById("a").value);
+        if (a <= 0) {
+            document.getElementById("ketqua").innerText = ("cạnh phải lớn hơn 0");
+        }
+        else {
+            let dien_tich =a*a;
+            document.getElementById("ketqua").innerText = (dien_tich);
+        }
+    }
+
+
+</script>
+
+</html>

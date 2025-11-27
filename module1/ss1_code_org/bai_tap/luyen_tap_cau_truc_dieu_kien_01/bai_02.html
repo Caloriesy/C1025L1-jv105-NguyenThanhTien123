@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <input id="a" type="text" placeholder="so a">
     <br>
     <button onclick="p()">ấn vào</button>
     <label id="ketqua"></label>
 </body>
-    <script>
-        function p(){
-            let a = parseFloat(document.getElementById("a").value);
-            if(a==15){
-                document.getElementById("ketqua").innerText = ("học sinh đủ tuổi đi học lớp 10");
-            }
-            else if(a>15){
-                document.getElementById("ketqua").innerText = ("học sinh quá tuổi đi học lớp 10");
-            }
-            else{
-                document.getElementById("ketqua").innerText = ("học sinh không đủ tuổi đi học lớp 10");
-            }
+<script>
+    function p() {
+        let a = parseFloat(document.getElementById("a").value);
+        if (a == 15) {
+            document.getElementById("ketqua").innerText = ("học sinh đủ tuổi đi học lớp 10");
         }
-        
+        else if (a > 15) {
+            document.getElementById("ketqua").innerText = ("học sinh quá tuổi đi học lớp 10");
+        }
+        else {
+            document.getElementById("ketqua").innerText = ("học sinh không đủ tuổi đi học lớp 10");
+        }
+    }
 
-    </script>
+
+</script>
+
 </html>
