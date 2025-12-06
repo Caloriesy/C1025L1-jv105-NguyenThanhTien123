@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="window"></label>
+</body>
+<script>
+    let a = [];
+    let b = [];
+    let n = prompt("nhập số lượng mảng:");
+    for (let i = 0; i < n; i++) {
+        let x = prompt("nhập mảng a:");
+        a.push(x);
+    }
+    for (let i = 0; i < n; i++) {
+        let x = prompt("nhập mảng b:");
+        b.push(x);
+    }
+    let c = a.concat(b);
+    document.getElementById("window").innerText = c;
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="window"></label>
+</body>
+<script>
+    let arr = [];
+    let n = Number(prompt("nhập số lượng mảng:"));
+    let count =0;
+    for (let i = 0; i < n; i++) {
+        let a = Number(prompt("nhập mảng số:"));
+        arr.push(a);
+    }
+    for (let i = 0; i < n; i++){
+        let c = arr[i];
+        if (c < 0){
+            count++;
+        }
+    }
+    document.getElementById("window").innerText = count;
+    
+</script>
+
+</html>

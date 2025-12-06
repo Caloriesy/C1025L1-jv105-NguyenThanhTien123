@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="window"></label>
+</body>
+<script>
+    let arr = ["2","10","9","12","5","45","20","97","72","43"];
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let c = arr[i];
+        if (c >= 10) {
+            count++;
+        }
+    }
+    document.getElementById("window").innerText = "kết quả: " + count;
+</script>
+
+</html>
