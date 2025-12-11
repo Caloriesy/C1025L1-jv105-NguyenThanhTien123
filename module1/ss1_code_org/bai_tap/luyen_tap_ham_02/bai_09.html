@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    function nhap(n) {
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            let a = prompt("nhap gia tri vao mang")
+            arr.push(a);
+        }
+        return arr;
+    }
+    function mang(tim, a) {
+        let count = 0;
+        for (let i = 0; i < a.length-1; i++) {
+            if(tim== a[i]){
+                count++;
+            }
+        }
+        return count;
+    }
+    let x = prompt("nhap so luong mang");
+    let a = nhap(x);
+    let tim = prompt("nhập vào ký tự bạn muốn tìm");
+    let result = mang(tim, a);
+    alert(result);
+</script>
+
+</html>
