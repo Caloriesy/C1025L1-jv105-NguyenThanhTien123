@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a = prompt("nhap don vi m hay f de kiem tra");
+    let result = 0;
+    switch(a){
+        case "m":
+            let m = prompt("nhap so met");
+            result = mettertofeet(m);
+            break;
+        case "f":
+            let f = prompt("nhap so feet");
+            result = mettertofeet(f);
+            break;
+        
+    }
+    alert(result);
+    function mettertofeet(m){
+        return m * 3.28084;
+    }
+    function feettometter(f){
+        return f * 0.3048;
+    }
+</script>
+</html>

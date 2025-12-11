@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    function tong(a){
+        let tong= 1;
+        for(let i = 1; i<=a;i++){
+            tong*=i;
+        }
+        return tong;
+    }
+    let a= parseInt(prompt("nhap mot gia tri"));
+    if(a==0){
+        alert("vui long nhap gia tri lon hon 0");
+    }
+    else{
+        let result = tong(a);
+        alert(result);
+    }
+</script>
+</html>

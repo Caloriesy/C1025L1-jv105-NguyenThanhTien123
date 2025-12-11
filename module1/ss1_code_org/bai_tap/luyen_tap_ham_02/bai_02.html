@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    function chuvi(r){
+        let c=2 * Math.PI * r;
+        return c;
+    }
+    function dientich(r){
+        let dt = Math.PI * r * r;
+        return dt;
+    }
+    let r= parseInt(prompt("nhap mot gia tri"));
+    if(r==0){
+        alert("vui long nhap gia tri lon hon 0");
+    }
+    else{
+        let cv = chuvi(r);
+        let dt = dientich(r);
+        alert("chu vi la" + cv);
+        alert("dien tich la" + dt);
+    }
+</script>
+</html>
