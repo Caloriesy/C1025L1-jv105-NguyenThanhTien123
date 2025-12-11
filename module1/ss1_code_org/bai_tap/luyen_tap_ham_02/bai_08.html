@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    function tong(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        return [a, b];
+    }
+    function nhap(n) {
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            let a = prompt("nhap gia tri vao mang")
+            arr.push(a);
+        }
+        return arr;
+    }
+    function daomang(arrays) {
+        for (let i = 0; i < arrays.length / 2; i++) {
+            let j = arrays.length - 1 - i;
+            let kq = tong(arrays[i], arrays[j]);
+            arrays[i] = kq[0];
+            arrays[j] = kq[1];
+        }
+        return arrays;
+    }
+    let x = prompt("nhap so luong mang");
+    let arrays = nhap(x);
+    alert("mảng trước khi đảo" + arrays);
+    daomang(arrays);
+    alert("mảng sau khi đảo" + arrays)
+
+</script>
+
+</html>
