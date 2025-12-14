@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input placeholder="">
+</body>
+<script>
+    class SanPham {
+    constructor(ma, ten, gia) {
+        this.ma = ma;
+        this.ten = ten;
+        this.gia = gia;
+    }
+}
+
+let ds = [];
+
+function hienthi() {
+    let tableString = `
+    <input id="ma" placeholder="nhập mã">
+    <input id="ten" placeholder="nhập tên">
+    <input id="gia" placeholder="nhập giá">
+    <button onclick="themsanpham()">Thêm mới</button>
+
+    <table border="1">
+        <tr>
+            <th>STT</th>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Xóa</th>
+            <th>Sửa</th>
+
+        </tr>
+    `;
+
+    for (let i = 0; i < ds.length; i++) {
+        tableString += `
+        <tr>
+            <td>${i + 1}</td>
+            <td>${ds[i].ma}</td>
+            <td>${ds[i].ten}</td>
+            <td>${ds[i].gia}</td>
+            <td><button onclick="xoa(${i})">X</button></td>
+            <td><button onclick="sua(${i})">bấm vào để sửa</button></td>
+        </tr>`;
+    }
+
+    tableString += `</table>`;
+    document.body.innerHTML = tableString;
+}
+
+function themsanpham() {
+    let ma = document.getElementById("ma").value;
+    let ten = document.getElementById("ten").value;
+    let gia = document.getElementById("gia").value;
+
+    if (ma && ten && gia) {
+        ds.push(new SanPham(ma, ten, Number(gia)));
+        hienthi();
+    } else {
+        alert("Nhập đủ thông tin");
+    }
+}
+
+function xoa(i) {
+    ds.splice(i, 1);
+    hienthi();
+}
+
+ds.push(new SanPham("SP-001", "Oppo", 500));
+hienthi();
+
+</script>
+
+</html>

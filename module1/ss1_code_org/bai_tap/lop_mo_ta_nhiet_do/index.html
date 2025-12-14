@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Temperature {
+        constructor(c) {
+            this.c = Number(c);
+        }
+
+        Celsius() {
+            if(this.c<-273){
+                alert("gia tri toi thieu phai lon hon -273 do c");
+                return;
+            }
+
+            return this.c * 9 / 5 + 32;
+        }
+    }
+
+    let f = new Temperature(27);
+    document.body.innerHTML = "do f la: " + f.Celsius();
+</script>
+
+</html>
