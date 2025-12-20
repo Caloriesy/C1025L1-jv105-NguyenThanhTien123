@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function char(a) {
+        let number = false;
+        let text = false;
+        for (let x of a) {
+            if (x >= '0' && x <= '9'){ 
+                number = true;
+            }
+            else { 
+                text = true ;
+            }
+
+        }
+        if (number && !text) {
+            console.log("1");
+            return;
+        }
+        else if (!number && text) {
+            console.log("0");
+            return;
+        }
+        else {
+            console.log("-1");
+            return;
+        }
+    }
+    char("345sg");
+</script>
+
+</html>
