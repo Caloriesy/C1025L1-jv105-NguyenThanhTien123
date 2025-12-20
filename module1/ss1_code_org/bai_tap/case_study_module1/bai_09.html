@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function sosanh(a) {
+        let behon = true;
+        for (let i = 0; i < a.length; i += 2) {
+            if (a[i] < a[i+1]) {
+                behon = false;
+            }
+        }
+
+        if (behon) {
+            console.log("ok");
+            return;
+        }
+        else {
+            console.log("no");
+            return;
+        }
+    }
+
+    function nhap() {
+        let n = prompt("nhập số lượng mảng là số chẵn")
+        let a = [];
+        if (n % 2 == 0) {
+            for (let i = 0; i < n; i++) {
+                let m = prompt("nhập phân tử thứ " + i);
+                a.push(m);
+            }
+        }
+        console.log(a);
+        return a;
+    }
+    let a = nhap();
+    sosanh(a);
+</script>
+
+</html>

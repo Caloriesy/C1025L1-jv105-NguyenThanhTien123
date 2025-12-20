@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function iselement(n) {
+        if (n < 2) {
+            return false;
+        }
+        let element = true;
+        for (let i = 2; i < n; i++) {
+            if (n % i === 0) {
+                element = false;
+            }
+        }
+        return element;
+    }
+    function iselements(a) {
+        let all = true;
+        for (let x of a) {
+            if (!iselement(x)) {
+                all = false;
+            }
+        }
+
+        if (all) {
+            console.log("true");
+            return;
+        }
+        else {
+            console.log("false");
+            return;
+        }
+    }
+    iselements([2, 3, 5, 7, 11]);
+</script>
+
+</html>
