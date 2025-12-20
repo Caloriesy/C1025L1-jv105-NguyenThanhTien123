@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let a = [];
+    let n = prompt("nhap so luong phan tu trong mang ")
+    let doixung = true;
+    for (let i = 0; i < n; i++) {
+        a[i] = prompt("nhap mot so:");
+    }
+    for (let i = 0; i < a.length; i++) {
+        console.log(a[i]);
+    }
+
+    for (let i = 0; i < a.length / 2; i++) {
+        let j = a.length - 1 - i;
+        if (a[i] !== a[j]) {
+            doixung = false;
+        }
+    }
+    if (doixung) {
+        console.log("ok");
+    }
+    else {
+        console.log("no");
+    }
+</script>
+
+</html>

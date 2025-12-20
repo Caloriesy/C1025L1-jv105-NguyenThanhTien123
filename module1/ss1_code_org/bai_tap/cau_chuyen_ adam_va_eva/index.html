@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class apple {
+        #weight;
+
+        constructor() {
+            this.#weight = 10;
+        }
+        eat(amount) {
+            if (amount == 1) {
+                if (this.#weight <= 0) {
+                    console.log("quả táo đã không còn");
+                    return false;
+                }
+
+                if (amount <= 0) { return false };
+
+                this.#weight -= amount;
+                if (this.#weight < 0) {
+                    this.#weight = 0;
+                }
+                console.log("quả táo còn:" + this.#weight)
+                return true;
+            }
+        }
+    }
+    class human {
+        constructor(ten, gioitinh, cannang) {
+            this.ten = ten;
+            this.gioitinh = gioitinh;
+            this.cannang = cannang;
+        }
+        noi() {
+            console.log("blablabla");
+        }
+        eatApple(apple, amount = 1) {
+            if (apple.eat(amount)) {
+                this.cannang += amount;
+            }
+            console.log(this.ten + " đã ăn táo");
+            console.log("cân nặng của " + this.ten + "là:" + this.cannang);
+            
+        }
+    }
+    const adam = new human("Adam", "nam", 60);
+    const eva = new human("eva", "nu", 53);
+    const apple1 = new apple();
+
+    adam.eatApple(apple1, 1);
+    adam.noi();
+    eva.eatApple(apple1, 1);
+    eva.noi();
+</script>
+
+</html>

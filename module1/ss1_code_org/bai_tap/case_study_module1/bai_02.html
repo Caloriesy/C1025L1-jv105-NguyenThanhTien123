@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function triangle(x, y, z) {
+        if (x == 0 || y == 0 || z == 0) {
+            console.log("3 canh phai lon hon 0");
+        }
+        else {
+            if (x + y > z && y + z > x && x + z > y ) {
+                if ((x * x) + (y * y) == (z * z) || (x * x) + (z * z) == (y * y) || (z * z) + (y * y) == (x * x)) {
+                    console.log("la tam giac vuong");
+                }
+                else{
+                    console.log("chi la ba canh cua mot tam giac");
+                }
+            }
+            else {
+                console.log("khong phai la 1 canh cua mot tam giac")
+            }
+        }
+    }
+    triangle(2, 4, 6);
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function phanso(s) {
+        let parts = s.split('/');
+        if (parts.length !== 2) return false;
+
+        let tu = parts[0];
+        let mau = parts[1];
+
+        if (tu === '' || mau === '') {
+            console.log("thieu mau hoac tu");
+        }
+        if (isNaN(tu) || isNaN(mau)) {
+            console.log("khong phai la phan so");
+        }
+        if (Number(mau) === 0){ 
+            console.log("0");
+        }
+
+        let ucln=0;
+        let temp;
+        if(tu>mau){
+            temp=mau;
+            mau=tu;
+            tu=temp;
+        }
+
+        for(let i=1;i<=mau;i++){
+            if(mau % i ==0 && tu % i==0){
+                if(i > ucln){
+                    ucln = i;
+                }
+            }
+        }
+        let rutgontu =tu/ucln;
+        let rutgonmau =mau/ucln;
+        console.log(rutgontu + "/" + rutgonmau);
+    }
+
+    phanso("1/2");
+</script>
+
+</html>

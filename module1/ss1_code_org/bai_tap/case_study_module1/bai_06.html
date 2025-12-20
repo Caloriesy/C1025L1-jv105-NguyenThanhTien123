@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function evenodd(n) {
+        let arr=[n];
+        let even=true;
+        let odd=true;
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]%2==1){
+                even=false;
+                
+            }
+            if(arr[i]%2==0){
+                odd = false;
+            }
+        }
+        if(even){
+            console.log("1");
+            return;
+        }
+        else if(odd){
+            console.log("0")
+            return;
+        }
+        else{
+            console.log("-1");
+            return;
+        }
+    }
+    evenodd(2,8,12,4,3);
+</script>
+
+</html>
