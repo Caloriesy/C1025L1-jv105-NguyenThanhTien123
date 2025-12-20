@@ -11,33 +11,27 @@
 
 </body>
 <script>
-    function evenodd(n) {
-        let arr=[n];
-        let even=true;
-        let odd=true;
-        for(let i=0;i<arr.length;i++){
-            if(arr[i]%2==1){
-                even=false;
-                
-            }
-            if(arr[i]%2==0){
-                odd = false;
-            }
+    function evenodd(arr) {
+        let even = false;
+        let odd = false;
+        for (let x of arr) {
+            if (x % 2 == 0) even = true;
+            else odd = true;
         }
-        if(even){
+        if (even && !odd) {
             console.log("1");
             return;
         }
-        else if(odd){
-            console.log("0")
+        else if (!even && odd) {
+            console.log("0");
             return;
         }
-        else{
+        else {
             console.log("-1");
             return;
         }
     }
-    evenodd(2,8,12,4,3);
+    evenodd([2, 8, 12, 4]);
 </script>
 
 </html>
