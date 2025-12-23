@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input placeholder="">
+</body>
+<script>
+    class quanlysinhvien {
+        constructor(ma, ten, lop, email, birth, module1) {
+            this.ma = ma;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.birth = birth;
+            this.module1 = module1;
+        }
+    }
+
+    let ds = [];
+
+    function hienthi() {
+        let tableString = `
+    <button onclick="themsinhvien()">Thêm mới</button>
+    <button onclick="xoa()">xóa sinh viên</button>
+    <button onclick="sua()">sửa sinh viên</button>
+    <table border="1">
+        <tr>
+            <th>STT</th>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th>Lớp</th>
+            <th>Email</th>
+            <th>ngày sinh</th>
+            <th>module</th>
+
+        </tr>
+    `;
+
+        for (let i = 0; i < ds.length; i++) {
+            tableString += `
+        <tr>
+            <td>${i + 1}</td>
+            <td>${ds[i].ma}</td>
+            <td>${ds[i].ten}</td>
+            <td>${ds[i].lop}</td>
+            <td>${ds[i].email}</td>
+            <td>${ds[i].birth}</td>
+            <td>${ds[i].module1}</td>
+        </tr>`;
+        }
+
+        tableString += `</table>`;
+        document.body.innerHTML = tableString;
+    }
+
+    function themsinhvien() {
+        let ma = prompt("nhập mã sinh viên");
+        let ten = prompt("nhập tên sinh viên");
+        let lop = prompt("nhập lớp");
+        let email = prompt("nhập email");
+        let birth = prompt("nhập ngày sinh");
+        let module1 = prompt("nhập module");
+
+        if (ma && ten && lop && email && birth && module1) {
+            ds.push(new quanlysinhvien(ma, ten, Number(lop), email, birth, module1));
+            hienthi();
+        } else {
+            alert("Nhập đủ thông tin");
+        }
+    }
+    function sua() {
+        let tim = prompt("nhập mã sinh viên cần sửa");
+        if (tim === null) {return};
+        for (let i = 0; i < ds.length; i++) {
+            if (tim == ds[i].ma) {
+                ds[i].ten = prompt("nhập tên");
+                ds[i].lop = prompt("nhập lớp");
+                ds[i].email = prompt("nhập email");
+                ds[i].birth = prompt("nhập ngày sinh");
+                ds[i].module1 = prompt("nhập module");
+                hienthi();
+                return;
+            }
+        }
+
+        alert("Không tìm thấy sinh viên");
+    }
+
+    function xoa(i) {
+        let tim = prompt("nhập mã sinh viên cần xóa");
+        if (tim === null) {return};
+        for (let i = 0; i < ds.length; i++) {
+            if (tim == ds[i].ma) {
+                let ok = confirm("Bạn có chắc chắn muốn xóa?");
+                if (!ok) return;
+                ds.splice(i, 1);
+                hienthi();
+                return;
+            }
+        }
+
+        alert("Không tìm thấy sinh viên");
+    }
+
+    ds.push(new quanlysinhvien("Sv-001", "tran van a", "5", "lakdf@gmail.com", "13/3/2003", "1"));
+    hienthi();
+
+</script>
+
+</html>

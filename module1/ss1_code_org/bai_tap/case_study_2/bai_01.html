@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body></body>
+<script>
+    function sochingphuong(arr) {
+        let store = [];
+        for (let i = 0; i < arr.length; i++) {
+            let x = Math.sqrt(arr[i]);
+            if (Number.isInteger(x)) {
+                store.push(arr[i]);
+            }
+        }
+        return store;
+    }
+
+    function isElement(n) {
+        if (n < 2) {
+            return false;
+        }
+
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function hienthi(arr, store) {
+        let odd = [];
+        let even = [];
+        let places = [];
+        let sum = 0;
+        let count = 0;
+        let places3 = [];
+        let e=[];
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+            if (i % 2 == 0) {
+                odd.push(arr[i]);
+                places.push(i);
+            }
+            if (i % 2 != 0) {
+                even.push(arr[i]);
+                sum += arr[i];
+                count++;
+                if (arr[i] % 3 == 0) {
+                    places3.push(arr[i]);
+                }
+            }
+            if(isElement(arr[i])){
+                e.push(arr[i]);
+            }
+        }
+        console.log("mảng lẻ:" + odd);
+        console.log("mảng chẵn:" + even);
+        console.log("phần tử sau đây là phần tử lẻ: " + places);
+        console.log("trung bình cộng của mảng chẵn: " + sum / count);
+        console.log("mảng chãn chia hết cho 3: " + places3);
+        console.log("số chính phương: " + store);
+        console.log("số nguyên tố là: " + e)
+    }
+
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let store = sochingphuong(arr);
+    hienthi(arr, store);
+</script>
+
+</html>
