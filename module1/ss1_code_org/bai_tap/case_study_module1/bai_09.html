@@ -12,31 +12,26 @@
 </body>
 <script>
     function sosanh(a) {
-        let behon = true;
-        for (let i = 0; i < a.length; i += 2) {
-            if (a[i] < a[i+1]) {
-                behon = false;
+        for (let i = 0; i < a.length -1; i++) {
+            if (a[i] > a[i+1]) {
+                console.log("no");
+                return;
             }
         }
-
-        if (behon) {
             console.log("ok");
-            return;
-        }
-        else {
-            console.log("no");
-            return;
-        }
     }
 
     function nhap() {
-        let n = prompt("nhập số lượng mảng là số chẵn")
+        let n = Number(prompt("nhập số lượng mảng là số chẵn"));
         let a = [];
         if (n % 2 == 0) {
             for (let i = 0; i < n; i++) {
                 let m = prompt("nhập phân tử thứ " + i);
                 a.push(m);
             }
+        }
+        else{
+            alert("mảng n phải là số chẵn");
         }
         console.log(a);
         return a;
