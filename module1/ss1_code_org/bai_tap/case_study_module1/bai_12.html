@@ -76,7 +76,7 @@
     }
     function sua() {
         let tim = prompt("nhập mã sinh viên cần sửa");
-        if (tim === null) {return};
+        if (tim === null) { return };
         for (let i = 0; i < ds.length; i++) {
             if (tim == ds[i].ma) {
                 ds[i].ten = prompt("nhập tên");
@@ -94,7 +94,7 @@
 
     function xoa(i) {
         let tim = prompt("nhập mã sinh viên cần xóa");
-        if (tim === null) {return};
+        if (tim === null) { return };
         for (let i = 0; i < ds.length; i++) {
             if (tim == ds[i].ma) {
                 let ok = confirm("Bạn có chắc chắn muốn xóa?");
